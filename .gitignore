@@ -6,5 +6,28 @@ dist/
 wheels/
 *.egg-info
 
-# Virtual environments
-.venv
+# Virtual Environment
+.venv/
+venv/
+
+# Environment variables / secrets
+.env
+
+# IDE files
+.vscode/
+.idea/
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Build / distribution
+dist/
+build/
+*.egg-info/
+
+# Logs
+*.log
