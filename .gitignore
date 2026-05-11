@@ -31,3 +31,9 @@ build/
 
 # Logs
 *.log
+
+# Chroma DB
+chroma_db/
+
+# data
+data/
