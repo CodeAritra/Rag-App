@@ -8,6 +8,7 @@ class Settings:
             self.GOOGLE_API_KEY = os.getenv("GOOGLE_API_KEY")
             self.EMBEDDING_MODEL = os.getenv("EMBEDDING_MODEL", "models/text-embedding-004")
             self.CHROMA_DB_DIR = os.getenv("CHROMA_DB_DIR", "chroma_db")
+            self.MODEL_NAME = os.getenv("MODEL_NAME", "gemini-1.5-flash")
             
             if not self.GOOGLE_API_KEY:
                 print("Warning: GOOGLE_API_KEY not found in environment variables.")

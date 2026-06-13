@@ -47,6 +47,17 @@ def create_vector_store(chunks):
             
         robust_embeddings = RobustEmbeddings(embedding_model)
 
+        # Clear existing database directory to avoid keeping old or deleted documents
+        import shutil
+        import os
+        if os.path.exists(settings.CHROMA_DB_DIR):
+            print(f"Clearing old vector database at {settings.CHROMA_DB_DIR}...")
+            try:
+                shutil.rmtree(settings.CHROMA_DB_DIR)
+                print("Old vector database cleared.")
+            except Exception as e:
+                print(f"Warning: Could not clear database directory: {e}")
+
         print(f"Creating vector store from {len(chunks)} chunks...")
         vector_store = Chroma.from_documents(
             documents=chunks,
